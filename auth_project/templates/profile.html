@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="d-flex align-items-center mb-3">
+    <h2 class="m-0">Profile Settings</h2>
+  </div>
+  <form method="post" class="row g-3">
+    <div class="col-12">
+      <label class="form-label">Full name</label>
+      <input name="full_name" class="form-control" value="{{ user.full_name or '' }}">
+    </div>
+    <div class="col-12">
+      <label class="form-label">Bio</label>
+      <textarea name="bio" class="form-control" rows="4">{{ user.bio or '' }}</textarea>
+    </div>
+    <div class="col-12 d-flex align-items-center">
+      <button type="submit" class="btn btn-primary">Save changes</button>
+      <a href="/" class="text-muted ms-3">Back to dashboard</a>
+    </div>
+  </form>
+{% endblock %}
